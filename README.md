@@ -8,3 +8,17 @@ docker run --name docker_nginx -d -p 8080:80 \
   nginx
 
 ```
+
+```
+docker run \
+    --name dnsmasq \
+    -d \
+    -p 53:53/udp \
+    -p 5380:8080 \
+    -v $CODEPATH/docker/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf \
+    --log-opt "max-size=100m" \
+    -e "HTTP_USER=admin" \
+    -e "HTTP_PASS=123456" \
+    --restart always \
+    jpillora/dnsmasq
+```
