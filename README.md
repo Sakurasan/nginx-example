@@ -8,6 +8,7 @@ docker run --name docker_nginx -d -p 8080:80 \
   nginx
 
 ```
+> nginx-lua https://github.com/sailor103/nginx-lua
 
 ```
 docker run \
